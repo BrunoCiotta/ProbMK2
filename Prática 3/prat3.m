@@ -31,7 +31,10 @@ function [] = prat3
 
   figure(1)
   n=[1:10];
-  plot(n, u)
+  plot(n, u, '-go')
+  title('Gráfico 1 - Delocamento x n', 'FontName', 'Times', 'FontSize', 12)
+  ylabel('Deslocamento (m)', 'FontName', 'Times', 'FontSize', 12)
+  xlabel('n', 'FontName', 'Times', 'FontSize', 12)
   grid on;
   hold on;
 
@@ -46,7 +49,7 @@ function [] = prat3
   F_2
   u_2=k_2\F_2
   u_2(10, 1) = 0.03;
-  plot(n, u_2)
+  plot(n, u_2, '-bo')
   %=============
 
 
