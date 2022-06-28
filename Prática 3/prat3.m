@@ -19,6 +19,10 @@ function [] = prat3
   k(10,10)=k_n(10);
   k
 
+  %for i=1:10
+  %  x=k_n(i)
+  %endfor
+
   %Definindo as matrizes F e u
   F=zeros(10,1);
   u=zeros(10,1);
@@ -32,7 +36,7 @@ function [] = prat3
   figure(1)
   n=[1:10];
   plot(n, u, '-go')
-  title('Gráfico 1 - Delocamento x n', 'FontName', 'Times', 'FontSize', 12)
+  title('Gráfico 1 - u_n x n', 'FontName', 'Times', 'FontSize', 12)
   ylabel('Deslocamento (m)', 'FontName', 'Times', 'FontSize', 12)
   xlabel('n', 'FontName', 'Times', 'FontSize', 12)
   grid on;
