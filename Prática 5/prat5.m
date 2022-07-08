@@ -36,7 +36,7 @@ function [] = prat5
   grid on;
 
   figure(3)
-  plot(theta_t, f_w, 'b-');
+  plot(theta_t(:,1), theta_t(:,2), 'b-');
   title('Gráfico 3 - Velocidade Angular x Ângulo', 'FontName', 'Times', 'FontSize', 12)
   ylabel('Velocidade Angular (rad/s)', 'FontName', 'Times', 'FontSize', 12)
   xlabel('Ângulo (rad)', 'FontName', 'Times', 'FontSize', 12)
