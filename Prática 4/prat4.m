@@ -1,9 +1,8 @@
-%set(0,'defaulttextinterpreter','latex')
 function [] = prat4
-  N=35;
+  N=74;
   ti=0;
   tf=20;
-  dt=0.1;
+  dt=0.001;
   %=== Definicao das expressoes ===
   r_o=@(o) (200*(3-2.*cos(o)));
   v_t=@(t) (0.05*(100+N).*(100-t));
@@ -13,11 +12,13 @@ function [] = prat4
 
   index=find(o_t<6*pi)(end)
   t(index)
+  %i=find(r_o(o_t)<60 && r_o(o_t)>60)
+  %i=fzero(drdt(o_t, t), 15)
 
   %=== Plot dos Graficos ===
   figure(1)
   plot(t,o_t,'b-');
-  title('Gráfico 1 - u_n x n', 'FontName', 'Times', 'FontSize', 12)
+  title('Gráfico 1 - Ângulo x tempo', 'FontName', 'Times', 'FontSize', 12)
   ylabel('Ângulo (rad)', 'FontName', 'Times', 'FontSize', 12)
   xlabel('t (s)', 'FontName', 'Times', 'FontSize', 12)
   grid on;
