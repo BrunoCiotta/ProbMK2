@@ -53,7 +53,7 @@ function [] = prat5
   figure(5)
   plot(t, f_osc, 'b-');
   title('Gráfico 5 - f vs t', 'FontName', 'Times', 'FontSize', 12)
-  ylabel('Frequeência de oscilação (Hz)', 'FontName', 'Times', 'FontSize', 12)
+  ylabel('Frequência de oscilação (Hz)', 'FontName', 'Times', 'FontSize', 12)
   xlabel('Tempo (s)', 'FontName', 'Times', 'FontSize', 12)
   xlim([t_osc tf]);   ylim([-0.5 0.5])     %- Ajustando os limites
   grid on;
