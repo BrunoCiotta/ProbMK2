@@ -7,10 +7,10 @@ function [] = prat5
   end
 
   %=== Resolucao da EDO ===
-  ti=0;  tf=20;  dt=0.01;  %- Definicao dos intervalos
+  ti=0;  tf=20;  dt=0.01;   %- Definicao dos intervalos
   [t,theta_t]=ode45(@(t,theta) df_dt(t,theta),[ti:dt:tf],[0; 15]);
-  f_theta=theta_t(:,1);   %- Angulo
-  f_w=theta_t(:,2);       %- Velocidade angular
+  f_theta=theta_t(:,1);     %- Angulo
+  f_w=theta_t(:,2);         %- Velocidade angular
 
   N=74;  r=(1+(N/100));  m=1;  c=0.5;  g=9.81;  %- Constantes do problema
 
@@ -49,10 +49,12 @@ function [] = prat5
   xlabel('Tempo (s)', 'FontName', 'Times', 'FontSize', 12)
   grid on;
 
+  t_osc=t(find(f_theta==max(f_theta)));    %- Encontrando o t em que a oscilacao comeca
   figure(5)
   plot(t, f_osc, 'b-');
   title('Gráfico 5 - f vs t', 'FontName', 'Times', 'FontSize', 12)
   ylabel('Frequeência de oscilação (Hz)', 'FontName', 'Times', 'FontSize', 12)
   xlabel('Tempo (s)', 'FontName', 'Times', 'FontSize', 12)
+  xlim([t_osc tf]);   ylim([-0.5 0.5])     %- Ajustando os limites
   grid on;
 end
