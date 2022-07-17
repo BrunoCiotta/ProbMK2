@@ -45,7 +45,6 @@ Ez=line([0 ezx]-mxE,[0 ezy]-mxE,[0 ezz]-mxE); set(Ez,'color','g')
 Tx=text(exx-mxE,exy-mxE,exz-mxE,'X');
 Ty=text(eyx-mxE,eyy-mxE,eyz-mxE,'Y');
 Tz=text(ezx-mxE,ezy-mxE,ezz-mxE,'Z');
-%axis([-1 1 -1 1 -1 1]*max([lx ly lz])),
 axis equal,
 grid,
 
@@ -60,8 +59,6 @@ for id=1:size(R,3)
     set(ex,'xdata',[0 R(1,1,id)],'ydata',[0 R(2,1,id)],'zdata',[0 R(3,1,id)])
     set(ey,'xdata',[0 R(1,2,id)],'ydata',[0 R(2,2,id)],'zdata',[0 R(3,2,id)])
     set(ez,'xdata',[0 R(1,3,id)],'ydata',[0 R(2,3,id)],'zdata',[0 R(3,3,id)])
-    %set(tx,'position',R(:,1,id))
-    %set(ty,'position',R(:,2,id))
-    %set(tz,'position',R(:,3,id))
+    view(3)
     pause(1e-1),
 end
